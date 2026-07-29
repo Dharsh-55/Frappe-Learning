@@ -3,9 +3,11 @@ app_title = "College Management"
 app_publisher = "Dharsh"
 app_description = "College Management System"
 app_email = "dharsh22@gmail.com"
-app_license = "mit"
+app_license = "mit" # data we entered during app creation 
 
-# Apps
+
+app_include_js = "custom_desk.bundle.js"
+# (1) Apps
 # ------------------
 
 # required_apps = []
@@ -24,7 +26,7 @@ app_license = "mit"
 # Includes in <head>
 # ------------------
 
-# include js, css files in header of desk.html
+# (2) include js, css files in header of desk.html 
 # app_include_css = "/assets/college_management/css/college_management.css"
 # app_include_js = "/assets/college_management/js/college_management.js"
 
@@ -138,13 +140,11 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+    "ToDo": {
+        "validate": "college_management.api.custom_logic"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
