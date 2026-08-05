@@ -36,3 +36,47 @@ Write in a professional and concise style.
 
 def custom_logic(doc, method):
     frappe.msgprint("Hook executed!")
+
+@frappe.whitelist()
+def create_task(task_subject):
+
+    task = frappe.new_doc("Task")
+    task.subject = task_subject
+    task.save()
+
+    return task.name
+
+from frappe.query_builder import DocType
+
+@frappe.whitelist()
+def update_students():
+    stu = DocType("Student")
+    dept = DocType("DepartmentX")
+
+    stus = (
+        frappe.qb.from_(stu)
+        .join(dept)
+        .on(stu.department == dept.dept_name)
+        .select(
+            stu.name,
+            stu.s_name,
+            stu.department
+        )
+        .limit(5)
+        .run(as_dict = True)
+    )
+
+    if stus:
+        doc = frappe.get_doc("Student", stus[0]['name'])
+        doc.title = "updates using document api"
+        doc.save()
+
+    for s in stus:
+        frappe.db.set_value(
+            "Student",
+            stu["s_name"],
+            "title",
+            "updated using db api"
+        )
+
+    return stus

@@ -1,0 +1,326 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:rno",
+ "color": "Blue",
+ "creation": "2026-07-16 11:43:55.847462",
+ "default_view": "List",
+ "doctype": "DocType",
+ "documentation": "https://docs.frappe.io/framework/user/en/basics/doctypes/virtual-doctype",
+ "engine": "InnoDB",
+ "field_order": [
+  "personal_details_section",
+  "s_name",
+  "rno",
+  "gender",
+  "date_of_birth",
+  "student_photo",
+  "biography",
+  "academic_details_section",
+  "department",
+  "column_break_mx52",
+  "course",
+  "semester",
+  "admission_date",
+  "advisor",
+  "hod_name",
+  "cgpa",
+  "attemdance",
+  "contact_details_section",
+  "phone",
+  "column_break_04uw",
+  "email",
+  "address",
+  "aadhar_card",
+  "parent_details_section",
+  "parent_name",
+  "parent_phone",
+  "occupation",
+  "fees_details_section",
+  "total_fees",
+  "fees_paid",
+  "balance",
+  "other_details_section",
+  "hosteller",
+  "room_no",
+  "remarks",
+  "internal_notes",
+  "educational_qualifications_section",
+  "qualifications",
+  "skills_section",
+  "skills",
+  "ai_assistant_section",
+  "ai_summary"
+ ],
+ "fields": [
+  {
+   "fieldname": "personal_details_section",
+   "fieldtype": "Section Break",
+   "label": "Personal Details"
+  },
+  {
+   "fieldname": "s_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Student Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rno",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Roll Number ",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "student_photo",
+   "fieldtype": "Attach Image",
+   "label": "Student Photo"
+  },
+  {
+   "fieldname": "academic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Academic Details"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "DepartmentX"
+  },
+  {
+   "fieldname": "column_break_mx52",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Course",
+   "reqd": 1
+  },
+  {
+   "fieldname": "semester",
+   "fieldtype": "Select",
+   "label": "Semester",
+   "options": "1\n2\n3\n4\n5\n6\n7\n8"
+  },
+  {
+   "fieldname": "admission_date",
+   "fieldtype": "Date",
+   "label": "Admission Date"
+  },
+  {
+   "fieldname": "cgpa",
+   "fieldtype": "Float",
+   "label": "CGPA",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "attemdance",
+   "fieldtype": "Percent",
+   "label": "Attemdance"
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "column_break_04uw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Use your official college mail id",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "placeholder": "namerno@gmail.com"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "parent_details_section",
+   "fieldtype": "Section Break",
+   "label": "Parent Details"
+  },
+  {
+   "fieldname": "parent_name",
+   "fieldtype": "Data",
+   "label": "Parent Name"
+  },
+  {
+   "fieldname": "parent_phone",
+   "fieldtype": "Phone",
+   "label": "Parent Phone"
+  },
+  {
+   "fieldname": "occupation",
+   "fieldtype": "Data",
+   "label": "Occupation"
+  },
+  {
+   "fieldname": "fees_details_section",
+   "fieldtype": "Section Break",
+   "label": "Fees Details"
+  },
+  {
+   "fieldname": "total_fees",
+   "fieldtype": "Currency",
+   "label": "Total Fees"
+  },
+  {
+   "fieldname": "fees_paid",
+   "fieldtype": "Currency",
+   "label": "Fees Paid"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "label": "Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "hosteller",
+   "fieldtype": "Check",
+   "label": "Hosteller"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text Editor",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "educational_qualifications_section",
+   "fieldtype": "Section Break",
+   "label": "Educational Qualifications"
+  },
+  {
+   "fieldname": "qualifications",
+   "fieldtype": "Table",
+   "label": "Qualifications",
+   "options": "Student Qualification"
+  },
+  {
+   "fieldname": "biography",
+   "fieldtype": "Text Editor",
+   "label": "Biography"
+  },
+  {
+   "fieldname": "aadhar_card",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card"
+  },
+  {
+   "fieldname": "internal_notes",
+   "fieldtype": "Code",
+   "label": "Internal Notes"
+  },
+  {
+   "fieldname": "skills_section",
+   "fieldtype": "Section Break",
+   "label": "Skills"
+  },
+  {
+   "fieldname": "advisor",
+   "fieldtype": "Link",
+   "label": "Advisor",
+   "options": "User"
+  },
+  {
+   "fetch_from": "department.hod",
+   "fieldname": "hod_name",
+   "fieldtype": "Data",
+   "label": "HoD Name",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.hosteller==1",
+   "fieldname": "room_no",
+   "fieldtype": "Int",
+   "label": "Room No."
+  },
+  {
+   "fieldname": "skills",
+   "fieldtype": "Table",
+   "label": "Skills",
+   "options": "Student Skill"
+  },
+  {
+   "fieldname": "ai_summary",
+   "fieldtype": "Small Text",
+   "label": "AI Summary"
+  },
+  {
+   "fieldname": "ai_assistant_section",
+   "fieldtype": "Column Break",
+   "label": "AI Assistant"
+  }
+ ],
+ "grid_page_length": 50,
+ "icon": "\ud83c\udf93",
+ "image_field": "student_photo",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "max_attachments": 2,
+ "modified": "2026-07-21 14:32:11.397874",
+ "modified_by": "Administrator",
+ "module": "College Management",
+ "name": "Student",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "s_name",
+ "show_preview_popup": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "s_name",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "s_name",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

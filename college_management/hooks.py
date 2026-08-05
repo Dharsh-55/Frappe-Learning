@@ -149,6 +149,11 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
+scheduler_events = {
+    "daily": [
+        "college_management.tasks.daily_maintenance"
+    ]
+}
 # scheduler_events = {
 # 	"all": [
 # 		"college_management.tasks.all"
