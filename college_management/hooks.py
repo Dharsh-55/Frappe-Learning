@@ -6,7 +6,10 @@ app_email = "dharsh22@gmail.com"
 app_license = "mit" # data we entered during app creation 
 
 
+
 app_include_js = "custom_desk.bundle.js"
+
+bench_commands = "college_management.commands:commands"
 # (1) Apps
 # ------------------
 
