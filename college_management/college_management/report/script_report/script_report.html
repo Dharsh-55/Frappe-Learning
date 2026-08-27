@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Student Details Report</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Department</th>
+                <th>CGPA</th>
+                <th>Roll Number</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% for (var i = 0; i < data.length; i++) { %>
+                <tr>
+                    <td><%= data[i].s_name %></td>
+                    <td><%= data[i].department %></td>
+                    <td><%= format_money(data[i].cgpa) %></td>
+                    <td><%= data[i].rno %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
