@@ -1,0 +1,24 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Player",
+  "enabled": 1,
+  "modified": "2026-09-08 16:51:31.897852",
+  "module": "Football Club Management",
+  "name": "Player Validation",
+  "script": "frappe.ui.form.on('Player', {\r\n    validate: function(frm) {\r\n\r\n        if (frm.doc.jersey_number < 1 || frm.doc.jersey_number > 99) {\r\n            frappe.throw(\"Jersey Number must be between 1 and 99\");\r\n        }\r\n\r\n        if (frm.doc.rating < 0 || frm.doc.rating > 10) {\r\n            frappe.throw(\"Rating must be between 0 and 10\");\r\n        }\r\n\r\n        if (frm.doc.contract_start && frm.doc.contract_end) {\r\n            if (frm.doc.contract_end < frm.doc.contract_start) {\r\n                frappe.throw(\"Contract End cannot be before Contract Start\");\r\n            }\r\n        }\r\n    }\r\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "User",
+  "enabled": 1,
+  "modified": "2026-09-10 11:05:53.459019",
+  "module": null,
+  "name": "Assignment",
+  "script": "frappe.ui.form.on('User', {\r\n    refresh(frm) {\r\n        frm.add_custom_button('Send Welcome Email', function() {\r\n            frappe.msgprint('Email Sent!');\r\n        }, 'Actions');\r\n    }\r\n});",
+  "view": "Form"
+ }
+]

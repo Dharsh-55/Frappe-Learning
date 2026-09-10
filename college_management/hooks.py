@@ -10,6 +10,8 @@ app_license = "mit" # data we entered during app creation
 app_include_js = "custom_desk.bundle.js"
 
 bench_commands = "college_management.commands:commands"
+
+fixtures = ["Client Script"]
 # (1) Apps
 # ------------------
 
