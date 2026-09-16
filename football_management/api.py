@@ -1,0 +1,11 @@
+import frappe
+from frappe.rate_limiter import rate_limit
+
+
+@frappe.whitelist(allow_guest=True)
+@rate_limit(key="limited_greeting", limit=5, seconds=60)
+def limited_greeting():
+    logger = frappe.logger()
+    logger.info("Endpoint called.")
+
+    frappe.response["message"] = "Hello, Rate Limited World!"
